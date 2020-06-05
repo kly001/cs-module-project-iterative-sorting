@@ -31,7 +31,7 @@ def binary_search(arr, target):
 
   while low <= high:
   # go to the middle
-     middle = (left+ right)//2
+     middle = (low+ high)//2
 
   # ask if the middle is less than or greater than our target
   ## if less, eliminate the right-hand side
@@ -47,31 +47,3 @@ def binary_search(arr, target):
   # adjust the low or high accordingly
 
   return -1 # not found
-
-# def binary_search(arr, target):
-#     if len(arr) == 0:
-#         return -1 # enpty array
-    
-#     low = 0
-#     high = len(arr) - 1
-
-#     while low <= high:
-#         # go to the middle
-#         middle = (left + right) // 2
-    
-#     # ask if the middle is less than or greater than our target
-#     #  if less, eliminate right-hand side
-#         if target < arr[middle]:
-#             high = middle - 1
-        
-#         elif target > arr[middle]:
-#             low = middle + 1
-
-#         else :
-#             return middle
-        
-#         # adjust the low or high accordingly
-
-#     return -1 # not found
-
-        
