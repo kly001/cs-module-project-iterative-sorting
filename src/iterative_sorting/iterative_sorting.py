@@ -8,12 +8,13 @@ def selection_sort(arr):
         # ## (hint, can do in 3 loc)
         # ## Your code here
         for j in range(cur_index + 1, len(arr)):
-            if arr[j] < arr[smallest_index]:
+            if arr[j] < arr[cur_index]:
                 smallest_index = j
-            arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
+               
 
         # ## TO-DO: swap
         # ## Your code here
+                arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
 
     return arr
 
@@ -80,7 +81,11 @@ What is the time and space complexity of the counting sort algorithm?
 
 def count_sort(arr, maximum=-1):
     # Your code here
-    if maximum == (-1):
+
+    if len(arr) == 0:
+        return arr
+
+    if maximum == -1:
         maximum = max(arr)
 
     counts = [0] * (maximum + 1)

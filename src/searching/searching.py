@@ -22,27 +22,56 @@ def linear_search(arr, target):
 
 
 def binary_search(arr, target):
-    # Set boundaries for low and high marks to search
-    if len(arr) == 0;
-    return -1
 
+  if len(arr) == 0:
+    return -1 # array empty
+    
+  low = 0
+  high = len(arr)-1
 
-    low = 0
-    high = len(arr)
-    # While low and high do not overlap...
-    while low <= high:
-        # Check the midpoint
-        mid = (low + high) // 2
-        # print(f"{low} - {mid} - {high}")
-        # If it's equal, return True
-        if arr[mid] == target
-        # Else, if target is smaller,
-        elif target < arr[mid]:
-                # set the high to midpoint value
-                high = mid
-        # Else, if target is bigger, 
-        else:
-                # set the low to midpoint value
-                low  mid + 1
-    # If we get to the end, return False
-    return False
+  while low <= high:
+  # go to the middle
+     middle = (left+ right)//2
+
+  # ask if the middle is less than or greater than our target
+  ## if less, eliminate the right-hand side
+     if target < arr[middle]:
+       high = middle - 1
+
+     elif target > arr[middle]:
+       low = middle + 1
+
+     else:
+       return middle
+
+  # adjust the low or high accordingly
+
+  return -1 # not found
+
+# def binary_search(arr, target):
+#     if len(arr) == 0:
+#         return -1 # enpty array
+    
+#     low = 0
+#     high = len(arr) - 1
+
+#     while low <= high:
+#         # go to the middle
+#         middle = (left + right) // 2
+    
+#     # ask if the middle is less than or greater than our target
+#     #  if less, eliminate right-hand side
+#         if target < arr[middle]:
+#             high = middle - 1
+        
+#         elif target > arr[middle]:
+#             low = middle + 1
+
+#         else :
+#             return middle
+        
+#         # adjust the low or high accordingly
+
+#     return -1 # not found
+
+        
