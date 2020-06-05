@@ -19,9 +19,7 @@ def selection_sort(arr):
     return arr
 
     
-
 #########################################################
-
 
 
 # TO-DO:  implement the Bubble Sort function below
@@ -41,6 +39,7 @@ def bubble_sort(arr):
 
     return arr
 
+## Solution from classmate:
 
 # def bubble_sort(arr):
 #     # Set incoming array to a variable for DRY code
