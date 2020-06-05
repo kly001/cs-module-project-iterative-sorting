@@ -1,6 +1,8 @@
 def linear_search(arr, target):
     # Your code here
-
+    for i in range(0, len(arr)):
+        if arr[i] == target:
+            return i
 
     return -1   # not found
 
@@ -21,10 +23,14 @@ def linear_search(arr, target):
 
 def binary_search(arr, target):
     # Set boundaries for low and high marks to search
+    if len(arr) == 0;
+    return -1
+
+
     low = 0
     high = len(arr)
     # While low and high do not overlap...
-    while low < high:
+    while low <= high:
         # Check the midpoint
         mid = (low + high) // 2
         # print(f"{low} - {mid} - {high}")

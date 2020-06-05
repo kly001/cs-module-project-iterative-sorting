@@ -14,100 +14,46 @@ def selection_sort(arr):
 
         # ## TO-DO: swap
         # ## Your code here
-        arr[i], arr[smallest_index] = arr[smallest_index, arr[i] ]
 
     return arr
 
+    
+
 #########################################################
 
-# ##Resources:
-
-# ## 1.  
-
-# ## Traverse through all array elements 
-# for i in range(len(A)): 
-      
-#     ## Find the minimum element in remaining  
-#     ## unsorted array 
-#     min_idx = i 
-#     for j in range(i+1, len(A)): 
-#         if A[smallest_index > A[j]: 
-#             min_idx = j 
-              
-#     ## Swap the found minimum element with  
-#     ## the first element         
-#     A[i], A[smallest_index = A[smallest_index, A[i] 
-  
-# ## Driver code to test above 
-# print ("Sorted array") 
-# for i in range(len(A)): 
-#     print("%d" %A[i]), 
-########################################################
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
+    swapped = True 
 
+    while swapped:
+        swapped = False
+
+        for i in range(0, len(arr)-1):
+            j=i+1
+
+            if arr[i] > arr[j]:
+                arr[i], arr[j] = arr[j], arr[i]
+                swapped = True
 
     return arr
 
 
+# def bubble_sort(arr):
+#     # Set incoming array to a variable for DRY code
+#     init = range(len(arr) - 1)
+#     # Tells second loop where to start at, runs for each value in the list
+#     for i in init:
+#         # Starts at 0
+#         for j in init:
+#             # Compare values
+#             if arr[j] > arr[j+1]:
+#                 # Perform the swap
+#                 arr[j], arr[j+1] = arr[j+1], arr[j]
+#     return arr
 
-############################################
-# ## Bubble Sort ==>
-# ## Refernces
-
-# ##  1.  https://www.geeksforgeeks.org/python-program-for-selection-sort/:
-# ## # Traverse through all array elements 
-# for i in range(len(A)): 
-      
-# ##    # Find the minimum element in remaining  
-# ##     # unsorted array 
-#     min_idx = i 
-#     for j in range(i+1, len(A)): 
-#         if A[smallest_index > A[j]: 
-#             min_idx = j 
-              
-# ##     # Swap the found minimum element with  
-# ##     # the first element         
-#     A[i], A[smallest_index = A[smallest_index, A[i] 
-
-####################################################
-
-
-# ## 2. https://www.educba.com/bubble-sort-in-python/ 
-
-# def bubble_Sort(arr):
-# m = len(arr)
-# # Traverse through all the array elements
-# for u in range(m):
-# for v in range(0, m-u-1):
-# # traverse the array from 0 to m-u-1
-# # Swap if the element is greater than adjacent next one
-# if arr[v] > arr[v+1] :
-# arr[v], arr[v+1] = arr[v+1], arr[v]
-
-######################################################################
-
-# ## 3. https://www.programminginpython.com/bubble-sort-algorithm-python/
-
-	# def bubble_sort(sort_list):
-	#     for j in range(len(sort_list)):
-	#         for k in range(len(sort_list) - 1):
-	#             if sort_list[k] > sort_list[k + 1]:
-	#                 sort_list[k], sort_list[k + 1] = sort_list[k + 1], sort_list[k]
-	#     print(sort_list)
-	
-	
-	# lst = []
-	# size = int(input("Enter size of the list: \t"))
-	
-	# for i in range(size):
-	#     elements = int(input("Enter the element: \t"))
-	#     lst.append(elements)
-	
-	# bubble_sort(lst)
 
 #################################################################
 
@@ -132,42 +78,23 @@ What is the time and space complexity of the counting sort algorithm?
 '''
 
 
-def counting_sort(arr, maximum=None):
+def count_sort(arr, maximum=-1):
     # Your code here
+    if maximum == (-1):
+        maximum = max(arr)
 
+    counts = [0] * (maximum + 1)
+
+    for value in arr:
+        if value < 0:
+            return "Error, negative numbers not allowed in Count Sort"
+        counts[value] += 1
+
+    j = 0
+    for i in range(0, len(counts)):
+        while counts[i] > 0:
+            arr[j] = i
+            j += 1
+            counts[i] -= 1
 
     return arr
-#####################################################
-#  ## Solution from lecture w/Sean Chen
-
-# ## Requires us to knwo the "max" v value that we will be sorting
-# ## The maximum was arg so we could specify the max value
-# ## The total range of data we will be sorting sits between 0 and maximum
-
-# def count_sort(arr, maximum = -1):
-#     if len(arr) == 0:
-#         return arr
-
-#         # ## if maximum is not given, we will take the max value from the input array
-#     if maximum == -1:
-#         maximum = max(arr)
-        
-#     # ## make a bunch of buckets
-#     buckets = [0 for _ in range(maximum + 1)]
-
-#     for x in arr:
-#         if x < 0:
-#             return "Error, negative numbers are not allowed"
-#         buckets[x] += 1
-
-#     # ## we have the counts of every value in our input array
-#     # ## loop through our buckets, starting at the smallest index
-#         j = 0
-#         for i in range(len(buckets)):
-#             while buckets[i] > 0:
-#                 arr[j] = i
-#                 j += 1
-#                 buckets[i] -= 1
-
-#     return arr
-
